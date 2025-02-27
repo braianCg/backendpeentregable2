@@ -46,6 +46,7 @@ const product = {
 }
 
 products.push(product);
+
 const productsStringified = JSON.stringify(products, null, '\t')
 await fs.promises.writeFile(pathToProducts, productsStringified)
 res.send({ message: 'Producto creado', data: product })
