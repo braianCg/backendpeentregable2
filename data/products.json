@@ -1,0 +1,26 @@
+[
+  {
+    "title": "dsd",
+    "description": "asdasd",
+    "code": "2322",
+    "price": 333,
+    "stock": 2,
+    "category": "233"
+  },
+  {
+    "title": "sadad",
+    "description": "wdwd",
+    "code": "wdw",
+    "price": 22,
+    "stock": 222,
+    "category": "222"
+  },
+  {
+    "title": "wdwa",
+    "description": "dwd",
+    "code": "wdw",
+    "price": 22,
+    "stock": 2,
+    "category": "222"
+  }
+]

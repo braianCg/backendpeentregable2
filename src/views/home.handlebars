@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Home</title>  
+</head>  
+<body>  
+    <h1>Lista de Productos</h1>  
+    <ul id="productList">  
+        {{#each products}}  
+            <li>{{this.title}} - ${{this.price}} <button onclick="deleteProduct({{this.id}})">Eliminar</button></li>  
+        {{/each}}  
+    </ul>  
+    <a href="/realtimeproducts">Ver productos en tiempo real</a>  
+    <script src="/socket.io/socket.io.js"></script>  
+    <script>  
+        const socket = io();  
+        const productList = document.getElementById('productList');  
+
+        function deleteProduct(productId) {  
+            socket.emit('deleteProduct', productId);  
+        }  
+
+        socket.on('updateProducts', (products) => {  
+            productList.innerHTML = '';  
+            products.forEach(product => {  
+                const li = document.createElement('li');  
+                li.innerHTML = `${product.title} - $${product.price} <button onclick="deleteProduct(${product.id})">Eliminar</button>`;  
+                productList.appendChild(li);  
+            });  
+        });  
+    </script>  
+</body>  
+</html>
