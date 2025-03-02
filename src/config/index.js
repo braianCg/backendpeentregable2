@@ -8,3 +8,5 @@ export const config = {
     PORT: process.env.PORT || 8080,
     dirname: __dirname,
 }
+
+export const PORT = 8080;

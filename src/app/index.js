@@ -1,7 +1,6 @@
 
 import express from 'express';
 import {CartRouter, ProductsRouter} from '../routes/index.js';
-//import {config} from '../config/index.js';
 
 
 const  initApp = () => {

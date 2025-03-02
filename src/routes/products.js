@@ -1,53 +1,26 @@
-import { Router } from 'express'
-import fs from 'fs'
-import path from 'path'
-import { config } from '../config/index.js'
-import { v4 as uuidv4 } from 'uuid'
-import { validateInputProducts } from '../middlewares/validationMiddleware.js'
+import { io } from '../server.js'; // Asegúrate de que el server.js exporte io
+import express from 'express';
+const router = express.Router();
 
-export const ProductsRouter = Router()
+// En el endpoint POST para agregar un producto  
+router.post('/addProduct', (req, res) => {
+    const newProduct = req.body;
+    const products = readProducts();
+    newProduct.id = products.length ? products[products.length - 1].id + 1 : 1; // Generar ID
+    products.push(newProduct);
+    saveProducts(products);
+    io.emit('updateProducts', products); // Emitir el evento para actualizar productos
+    res.status(201).json(newProduct);
+});
 
-const pathToProducts = path.join(config.dirname, '/src/data/products.json')
+// En el endpoint DELETE para eliminar un producto  
+router.delete('/deleteProduct/:id', (req, res) => {
+    const productId = parseInt(req.params.id);
+    const products = readProducts();
+    const updatedProducts = products.filter(p => p.id !== productId);
+    saveProducts(updatedProducts);
+    io.emit('updateProducts', updatedProducts); // Emitir el evento para actualizar productos
+    res.status(200).json({ message: 'Producto eliminado' });
+});
 
-console.log(pathToProducts)
-ProductsRouter.get('/', async (req, res) => {
-let productsString = await fs.promises.readFile(pathToProducts, 'utf-8')
-const products = JSON.parse(productsString)
-res.send({ products })
-})
-
-ProductsRouter.post('/', validateInputProducts, async (req, res) => {
-let productsString = await fs.promises.readFile(pathToProducts, 'utf-8')
-const products = JSON.parse(productsString)
-
-  const id = uuidv4() // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
-
-const {
-    title,
-    description,
-    code,
-    price,
-    status,
-    stock,
-    category,
-    thumbnails,
-} = req.body
-
-const product = {
-    id,
-    title,
-    description,
-    code,
-    price,
-    status,
-    stock,
-    category,
-    thumbnails,
-}
-
-products.push(product);
-
-const productsStringified = JSON.stringify(products, null, '\t')
-await fs.promises.writeFile(pathToProducts, productsStringified)
-res.send({ message: 'Producto creado', data: product })
-})
+export default router;
