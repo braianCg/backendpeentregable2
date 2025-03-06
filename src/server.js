@@ -61,7 +61,6 @@ io.on('connection', (socket) => {
     });
 });
 
-// Iniciar el servidor
 httpServer.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
