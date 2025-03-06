@@ -17,7 +17,6 @@ export const readProducts = () => {
 };
 
 export const saveProducts = (products) => {
-    // Asegúrate de que la carpeta exista antes de escribir el archivo
     const dir = path.dirname(productsFilePath);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
