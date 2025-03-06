@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/addProduct', (req, res) => {
     const newProduct = req.body;
     const products = readProducts();
-    newProduct.id = products.length ? products[products.length - 1].id + 1 : 1; // Generar ID
+    newProduct.id = products.length ? products[products.length - 1].id + 1 : 1;
     products.push(newProduct);
     saveProducts(products);
     io.emit('updateProducts', products);
