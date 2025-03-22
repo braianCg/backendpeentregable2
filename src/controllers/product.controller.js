@@ -14,13 +14,6 @@ export class ProductController {
 
             console.log({ limit, page, query, sort })
 
-            /* const profileImage = req.profileImage
-            const userCreated = await this.userService.createUser({
-            email,
-            firstName,g
-            lastName,
-            profileImage: profileImage?.path,
-            }) */
             res.send({
                 message: 'Get products',
                 data: [],

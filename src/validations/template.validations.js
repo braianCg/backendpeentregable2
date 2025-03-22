@@ -1,4 +1,3 @@
-// validationSchema.js
 import Joi from 'joi'
 
 export const userCreateSchema = Joi.object({

@@ -1,4 +1,3 @@
-// filepath: c:\Users\thela\OneDrive\Escritorio\Javaback\backendpeentregable2\src\models\cart.model.js
 import mongoose from 'mongoose';
 
 const cartSchema = new mongoose.Schema({

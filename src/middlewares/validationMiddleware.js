@@ -40,7 +40,6 @@ export const validateCreateUser = (req, res, next) => {
 }
 
 export const validateGetProducts = (req, res, next) => {
-  //Nos devuelve un array de errores
   const { error } = getProductsSchema.validate(req.params)
   if (error) {
     const errorMessage = error.details

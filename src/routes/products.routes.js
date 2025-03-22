@@ -39,7 +39,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Crear un nuevo producto
 router.post('/', async (req, res) => {
     try {
         const newProduct = new Product(req.body);
@@ -50,7 +49,6 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Eliminar un producto
 router.delete('/:pid', async (req, res) => {
     try {
         const product = await Product.findByIdAndDelete(req.params.pid);

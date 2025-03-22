@@ -1,4 +1,3 @@
-//Error handler de un paso. Se agrega next y error en los params para indicarle a Express que será un manejador de error.
 const errorHandler = (err, req, res, next) => {
 
     
