@@ -1,79 +1,34 @@
 [
   {
-    "id": "47ee937c-e587-4bc8-a00d-a782230280a4",
-    "title": "titulo",
-    "description": "description",
-    "code": 1234,
-    "price": 200,
-    "status": true,
-    "stock": 10,
-    "category": "categoria",
-    "thumbnails": []
+    "title": "cebolla",
+    "description": "cebolla morada",
+    "code": "3231",
+    "price": 550,
+    "stock": 30000,
+    "category": "verduras"
   },
   {
-    "id": "f4362167-4dfd-4475-a78a-ddbcbf14094b",
-    "title": "titulo",
-    "description": "description",
-    "code": 1234,
-    "price": 200,
-    "status": true,
-    "stock": 10,
-    "category": "categoria",
-    "thumbnails": []
+    "title": "cebolla blanca",
+    "description": "cebolla ",
+    "code": "3125",
+    "price": 1200,
+    "stock": 32000,
+    "category": "verduras"
   },
   {
-    "id": "f4362167-4dfd-4475-a78a-ddbcbf14094b1",
-    "title": "titulo",
-    "description": "description",
-    "code": 1234,
-    "price": 200,
-    "status": true,
-    "stock": 10,
-    "category": "categoria",
-    "thumbnails": []
+    "title": "arvejas ",
+    "description": "arvejas peladas",
+    "code": "3126",
+    "price": 1400,
+    "stock": 1200,
+    "category": "legumbres"
   },
   {
-    "id": "f4362167-4dfd-4475-a78a-ddbcbf14094b11",
-    "title": "titulo",
-    "description": "description",
-    "code": 1234,
-    "price": 200,
-    "status": true,
-    "stock": 10,
-    "category": "categoria",
-    "thumbnails": []
-  },
-  {
-    "id": "f4362167-4dfd-4475-a78a-ddbcbf14094b111",
-    "title": "titulo",
-    "description": "description",
-    "code": 1234,
-    "price": 200,
-    "status": true,
-    "stock": 10,
-    "category": "categoria",
-    "thumbnails": []
-  },
-  {
-    "id": "f4362167-4dfd-4475-a78a-ddbcbf14094b1111",
-    "title": "titulo",
-    "description": "description",
-    "code": 1234,
-    "price": 200,
-    "status": true,
-    "stock": 10,
-    "category": "categoria",
-    "thumbnails": []
-  },
-  {
-    "id": "f4362167-4dfd-4475-a78a-ddbcbf14094b11111",
-    "title": "rocio",
-    "description": "description",
-    "code": 1234,
-    "price": 200,
-    "status": true,
-    "stock": 10,
-    "category": "categoria",
-    "thumbnails": []
+    "title": "Pan frances",
+    "description": "Panes ",
+    "code": "2132",
+    "price": 250,
+    "stock": 2500,
+    "category": "panificados"
   }
 ]

@@ -1,25 +1,22 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsFilePath = path.resolve('src/data/products.json');
 
 export const readProducts = () => {
-    if (fs.existsSync(productsFilePath)) {
-        const data = fs.readFileSync(productsFilePath, 'utf8');
+    try {
+        const data = fs.readFileSync(productsFilePath, 'utf-8');
         return JSON.parse(data);
+    } catch (error) {
+        console.error('Error leyendo el archivo de productos:', error);
+        return [];
     }
-    return [];
 };
 
 export const saveProducts = (products) => {
-    const dir = path.dirname(productsFilePath);
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+    try {
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2), 'utf-8');
+    } catch (error) {
+        console.error('Error guardando el archivo de productos:', error);
     }
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 };
