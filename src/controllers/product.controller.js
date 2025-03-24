@@ -1,7 +1,6 @@
 export class ProductController {
     constructor() {
-        //Terminar de conectar con la clase de Service de Producto
-        // this.productService = new ProductService
+
     }
 
     getProducts = async (req, res, next) => {
