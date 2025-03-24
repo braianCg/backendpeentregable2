@@ -18,7 +18,7 @@ Instalación
 Clona este repositorio:
 
 git clone (https://github.com/braianCg/backendpeentregable2.git)
-cd tu-repositorio
+cd backpreentregable2
 
 Instala las dependencias:
 
