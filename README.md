@@ -17,7 +17,7 @@ Git.
 Instalación
 Clona este repositorio:
 
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone (https://github.com/braianCg/backendpeentregable2.git)
 cd tu-repositorio
 
 Instala las dependencias:
